@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PopularMovies1</string>
+    <string name="error_message">
+        An error has occurred. Please try again.
+    </string>
+
+    <string name="title_activity_movie_abstract">MovieAbstractActivity</string>
+    <string name="orderBy">Order by:</string>
+    <string-array name="spinner_items">
+        <item>Popular</item>
+        <item>Top rated</item>
+    </string-array>
+
+</resources>
+
