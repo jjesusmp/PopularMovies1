@@ -10,10 +10,10 @@
         <menu>
             <item
                 android:id="@+id/menuSortPopular"
-                android:title="Sort by newest" />
+                android:title="Popular" />
             <item
                 android:id="@+id/menuSortRating"
-                android:title="Sort by rating" />
+                android:title="Rating" />
         </menu>
     </item>
 </menu>

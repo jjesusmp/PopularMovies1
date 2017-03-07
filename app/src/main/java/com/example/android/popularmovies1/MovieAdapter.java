@@ -2,7 +2,6 @@ package com.example.android.popularmovies1;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,11 @@ import com.example.android.popularmovies1.model.MovieDto;
 import com.example.android.popularmovies1.utils.Constants;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 /**
- * Created by Jesus on 28/02/2017.
+ * Created by jjesusmp
  */
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapterViewHolder> {
 
@@ -34,8 +32,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
         this.mClickHandler=onClick;
     }
 
-    public interface ListItemClickListener {
-    }
 
     public class MovieAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView mTitleTextView;

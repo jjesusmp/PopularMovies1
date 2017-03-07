@@ -6,10 +6,6 @@
 
     <string name="title_activity_movie_abstract">MovieAbstractActivity</string>
     <string name="orderBy">Order by:</string>
-    <string-array name="spinner_items">
-        <item>Popular</item>
-        <item>Top rated</item>
-    </string-array>
 
 </resources>
 

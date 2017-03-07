@@ -1,8 +1,5 @@
 package com.example.android.popularmovies1.utils;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.android.popularmovies1.model.MovieDto;
@@ -13,31 +10,14 @@ import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+
 
 /**
- * Created by Jesus on 28/02/2017.
+ * Created by jjesusmp
  */
 
 public final class MovieJsonUtils {
 
-        /**
-         * This method parses JSON from a web response and returns an array of Strings
-         * describing the weather over various days from the forecast.
-         * <p/>
-         * Later on, we'll be parsing the JSON into structured data within the
-         * getFullWeatherDataFromJson function, leveraging the data we have stored in the JSON. For
-         * now, we just convert the JSON into human-readable strings.
-         *
-         * @param MoviesListJsonResponseStr JSON response from server
-         *
-         * @return Array of Strings describing weather data
-         *
-         * @throws JSONException If JSON data cannot be properly parsed
-         */
         public static ArrayList<MovieDto> getMovieListFromJson(String MoviesListJsonResponseStr)
                 throws JSONException {
 
@@ -53,9 +33,7 @@ public final class MovieJsonUtils {
 
             final String OWM_MESSAGE_CODE = "cod"; //error code
 
-        /* String array to hold each movie String */
             ArrayList<MovieDto> parsedMovieList = new ArrayList<MovieDto>();
-
 
             JSONObject ResultsJson = new JSONObject(MoviesListJsonResponseStr);
 

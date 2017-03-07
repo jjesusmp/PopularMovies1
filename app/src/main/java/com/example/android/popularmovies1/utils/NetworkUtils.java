@@ -10,14 +10,14 @@ import java.net.URL;
 import java.util.Scanner;
 
 /**
- * Created by jjesusmp on 28/02/2017.
+ * Created by jjesusmp
  */
 
 public class NetworkUtils {
 
     final static String BASE_URL_API = "http://api.themoviedb.org/3"; //Base URL of themovieDB
     final static String PARAM_API_KEY = "api_key";
-    final static String API_KEY = "fc157eb6a9792aa1d87d0151c914692d";
+    final static String API_KEY = "";//API KEY
 
     public static URL buildAPIUrl(String sortBy) {
         Uri builtUri = Uri.parse(BASE_URL_API+sortBy).buildUpon()

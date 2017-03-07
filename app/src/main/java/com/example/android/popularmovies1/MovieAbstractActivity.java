@@ -22,25 +22,28 @@ public class MovieAbstractActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_abstract);
-        Intent i = getIntent();
-        MovieDto movie = (MovieDto)i.getSerializableExtra("MovieDto");
+        Intent intent = getIntent();
 
-        //Init items
-        this.mTitle=(TextView)findViewById(R.id.abstractTitleTextView);
-        this.mTitle.setText(movie.getTitle());
+        if(intent.hasExtra("MovieDto")) {
+            MovieDto movie = (MovieDto) intent.getSerializableExtra("MovieDto");
 
-        this.mSypnosis=(TextView)findViewById(R.id.abstractSypnosisTextView);
-        this.mSypnosis.setText(movie.getSypnosis());
+            //Init items
+            this.mTitle = (TextView) findViewById(R.id.abstractTitleTextView);
+            this.mTitle.setText(movie.getTitle());
 
-        this.mImage=(ImageView)findViewById(R.id.abstractPosterImageView);
-        Picasso.with(this.mImage.getContext())
-                .load(Constants.BASE_URL_IMAGE+Constants.PARAM_SIZE+movie.getImage())
-                .into(this.mImage);
+            this.mSypnosis = (TextView) findViewById(R.id.abstractSypnosisTextView);
+            this.mSypnosis.setText(movie.getSypnosis());
 
-        this.mUserRating=(TextView)findViewById(R.id.abstractUserRatingTextView);
-        this.mUserRating.setText(movie.getUser_rating());
+            this.mImage = (ImageView) findViewById(R.id.abstractPosterImageView);
+            Picasso.with(this.mImage.getContext())
+                    .load(Constants.BASE_URL_IMAGE + Constants.PARAM_SIZE + movie.getImage())
+                    .into(this.mImage);
 
-        this.mReleaseDate=(TextView)findViewById(R.id.abstractReleaseDateTextView);
-        this.mReleaseDate.setText(movie.getRelease_date());
+            this.mUserRating = (TextView) findViewById(R.id.abstractUserRatingTextView);
+            this.mUserRating.setText(movie.getUser_rating());
+
+            this.mReleaseDate = (TextView) findViewById(R.id.abstractReleaseDateTextView);
+            this.mReleaseDate.setText(movie.getRelease_date());
+        }
     }
 }

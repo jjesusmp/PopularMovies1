@@ -3,7 +3,7 @@ package com.example.android.popularmovies1.model;
 import java.io.Serializable;
 
 /**
- * Created by jjesusmp on 28/02/2017.
+ * Created by jjesusmp
  */
 
 public class MovieDto implements Serializable {
