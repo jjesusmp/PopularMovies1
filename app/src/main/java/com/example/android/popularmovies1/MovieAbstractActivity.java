@@ -10,40 +10,37 @@ import com.example.android.popularmovies1.model.MovieDto;
 import com.example.android.popularmovies1.utils.Constants;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MovieAbstractActivity extends AppCompatActivity {
 
-    private TextView mTitle;
-    private TextView mSypnosis;
-    private ImageView mImage;
-    private TextView mUserRating;
-    private TextView mReleaseDate;
+    @BindView(R.id.abstractTitleTextView) TextView mTitle;
+    @BindView(R.id.abstractPosterImageView) ImageView mImage;
+    @BindView(R.id.abstractSypnosisTextView) TextView mSypnosis;
+    @BindView(R.id.abstractUserRatingTextView) TextView mUserRating;
+    @BindView(R.id.abstractReleaseDateTextView) TextView mReleaseDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_abstract);
+        ButterKnife.bind(this);
         Intent intent = getIntent();
 
         if(intent.hasExtra("MovieDto")) {
-            MovieDto movie = (MovieDto) intent.getSerializableExtra("MovieDto");
+            MovieDto movie = (MovieDto) intent.getParcelableExtra("MovieDto");
 
-            //Init items
-            this.mTitle = (TextView) findViewById(R.id.abstractTitleTextView);
-            this.mTitle.setText(movie.getTitle());
-
-            this.mSypnosis = (TextView) findViewById(R.id.abstractSypnosisTextView);
-            this.mSypnosis.setText(movie.getSypnosis());
-
-            this.mImage = (ImageView) findViewById(R.id.abstractPosterImageView);
-            Picasso.with(this.mImage.getContext())
+            mTitle.setText(movie.getTitle());
+            mSypnosis.setText(movie.getSypnosis());
+            Picasso.with(mImage.getContext())
                     .load(Constants.BASE_URL_IMAGE + Constants.PARAM_SIZE + movie.getImage())
-                    .into(this.mImage);
-
-            this.mUserRating = (TextView) findViewById(R.id.abstractUserRatingTextView);
-            this.mUserRating.setText(movie.getUser_rating());
-
-            this.mReleaseDate = (TextView) findViewById(R.id.abstractReleaseDateTextView);
-            this.mReleaseDate.setText(movie.getRelease_date());
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(mImage);
+            mUserRating.setText(movie.getUser_rating());
+            mReleaseDate.setText(movie.getRelease_date());
         }
+        ButterKnife.bind(this);
     }
 }

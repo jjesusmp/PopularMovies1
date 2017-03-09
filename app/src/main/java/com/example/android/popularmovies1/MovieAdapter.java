@@ -69,6 +69,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
 
         Picasso.with(MoviesAdapterViewHolder.mPosterItemImageView.getContext())
                 .load(Constants.BASE_URL_IMAGE+Constants.PARAM_SIZE+mMovieListData.get(position).getImage())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
                 .into(MoviesAdapterViewHolder.mPosterItemImageView);
     }
 

@@ -68,10 +68,11 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Movi
         Context context = this;
         Toast.makeText(context, movieInfoForThisItem.getTitle(), Toast.LENGTH_SHORT)
                 .show();
-        Intent intent = new Intent(MainActivity.this,MovieAbstractActivity.class);
-        intent.putExtra("MovieDto", movieInfoForThisItem);
+        Intent intent = new Intent(this,MovieAbstractActivity.class);
+        Bundle mBundle = new Bundle();
+        mBundle.putParcelable("MovieDto", movieInfoForThisItem);
+        intent.putExtras(mBundle);
         startActivity(intent);
-
 
     }
 
